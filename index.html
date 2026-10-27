@@ -50,7 +50,10 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:34px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
   .card:hover{transform:translateY(-4px)}
-  .art{aspect-ratio:16/10;display:block;width:100%}
+  .art{aspect-ratio:16/10;display:block;width:100%;object-fit:cover}
+  a.card{color:inherit;text-decoration:none}
+  .play{margin-top:auto;align-self:flex-start;background:var(--moss);color:var(--bg);padding:9px 18px;border-radius:999px;font-weight:600;font-size:.95rem}
+  a.card:hover .play{background:var(--moss-deep)}
   .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
   .tags{display:flex;gap:8px;flex-wrap:wrap}
   .tag{font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--bg2);color:var(--moss-deep)}
@@ -122,24 +125,15 @@
         </div>
       </article>
 
-      <article class="card">
-        <svg class="art" viewBox="0 0 320 200" aria-hidden="true">
-          <rect width="320" height="200" fill="#bfe0f5"/>
-          <path d="M-10 200 L120 40 L190 120 L230 80 L340 200Z" fill="#ffffff"/>
-          <path d="M120 40 L150 76 L135 72 L120 88 L105 72 L92 74Z" fill="#dbe9f2"/>
-          <path d="M70 200 Q110 130 130 90" stroke="#9fbcd0" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
-          <path d="M190 200 Q170 150 150 110" stroke="#9fbcd0" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
-          <line x1="40" y1="190" x2="140" y2="70" stroke="#556" stroke-width="2"/>
-          <rect x="70" y="150" width="10" height="8" fill="#e05a47"/><rect x="100" y="114" width="10" height="8" fill="#e05a47"/>
-          <path d="M240 200 L252 172 L264 200Z M262 200 L276 164 L290 200Z M286 200 L298 176 L310 200Z" fill="#2f5d3a"/>
-          <rect x="18" y="176" width="34" height="24" fill="#7a4b2a"/><path d="M14 178 L35 162 L56 178Z" fill="#4b2d18"/>
-        </svg>
+      <a class="card" href="https://mtmogul.com/" target="_blank" rel="noopener">
+        <img class="art" src="https://mtmogul.com/og-image.jpg" alt="Mountain Mogul ski resort" loading="lazy">
         <div class="body">
-          <div class="tags"><span class="tag">Game</span><span class="tag">Tycoon</span><span class="tag status">In development</span></div>
+          <div class="tags"><span class="tag">Game</span><span class="tag">Tycoon</span><span class="tag status">Play free</span></div>
           <h3>Mountain Mogul</h3>
-          <p>Build the ski resort of your dreams. Carve trails, string up lifts, keep the lodge cocoa flowing, and turn one snowy hill into a mountain empire.</p>
+          <p>Build a ski resort on an untouched mountain. Clear trees, cut trails, run chairlifts, and keep thousands of skiers happy through a full winter of weather.</p>
+          <span class="play">Play now →</span>
         </div>
-      </article>
+      </a>
 
     </div>
   </div>
