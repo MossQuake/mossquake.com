@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MossQuake — small games &amp; apps</title>
+<meta name="description" content="MossQuake is a tiny independent studio making cozy games and quiet little apps.">
+<meta property="og:title" content="MossQuake">
+<meta property="og:description" content="Small games & quiet little apps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='36' r='22' fill='%234f7a3a'/><path d='M12 40 L22 30 L28 38 L36 26 L44 36 L52 30' stroke='%23e9f0d8' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3f1e7; --bg2:#e7ead6; --ink:#1f2a1c; --muted:#5b6655;
+    --moss:#4f7a3a; --moss-deep:#2f4d22; --lichen:#a9c46c; --card:#fffdf6; --line:#d6dac4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#121811; --bg2:#1a2318; --ink:#e9eedf; --muted:#a2ad98;
+      --moss:#8fbf5f; --moss-deep:#cfe3a8; --lichen:#6f9a45; --card:#1c261a; --line:#2c3a29; }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--moss);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .logo{display:flex;align-items:center;gap:10px;font:800 1.35rem Fraunces,serif;color:var(--ink)}
+  .logo:hover{text-decoration:none}
+  .logo svg{width:34px;height:34px}
+  nav ul{display:flex;gap:22px;list-style:none;font-weight:500}
+  nav ul a{color:var(--muted)}
+
+  header.hero{position:relative;overflow:hidden;padding:70px 0 120px}
+  .hero h1{font:800 clamp(2.6rem,8vw,5rem)/1.02 Fraunces,serif;letter-spacing:-.02em;max-width:12ch}
+  .hero h1 em{font-style:normal;color:var(--moss)}
+  .hero p{margin-top:20px;max-width:46ch;font-size:1.15rem;color:var(--muted)}
+  .hero .btn{display:inline-block;margin-top:30px;background:var(--moss);color:var(--bg);padding:13px 24px;border-radius:999px;font-weight:600}
+  .hero .btn:hover{text-decoration:none;background:var(--moss-deep)}
+  .hills{position:absolute;left:0;right:0;bottom:0;width:100%;height:140px;pointer-events:none}
+
+  section{padding:70px 0}
+  .alt{background:var(--bg2)}
+  h2{font:800 clamp(1.8rem,4.5vw,2.6rem) Fraunces,serif;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin-top:6px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:34px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+  .card:hover{transform:translateY(-4px)}
+  .art{aspect-ratio:16/10;display:block;width:100%}
+  .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--bg2);color:var(--moss-deep)}
+  .tag.status{background:var(--lichen);color:#1f2a1c}
+  .card h3{font:700 1.45rem Fraunces,serif}
+  .card p{color:var(--muted)}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .about p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+  .values{list-style:none;display:grid;gap:14px}
+  .values li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .values b{display:block;font-family:Fraunces,serif;font-size:1.1rem}
+  @media (max-width:760px){.about{grid-template-columns:1fr} nav ul{gap:14px;font-size:.95rem}}
+
+  footer{padding:40px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="26" fill="var(--moss)"/><path d="M10 40 L22 28 L28 37 L36 24 L45 35 L54 29" stroke="var(--bg)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      MossQuake
+    </a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Small games.<br><em>Quiet</em> little apps.</h1>
+    <p>MossQuake is a tiny independent studio from New England, making cozy, curious things that grow slowly — and occasionally shake the ground a little.</p>
+    <a class="btn" href="#work">See what we're making</a>
+  </div>
+  <svg class="hills" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 80 C200 30 360 30 560 70 S920 120 1100 60 S1340 30 1440 50 V140 H0Z" fill="var(--lichen)" opacity=".45"/>
+    <path d="M0 110 C240 70 420 80 640 105 S1020 130 1220 95 S1400 85 1440 92 V140 H0Z" fill="var(--bg2)"/>
+  </svg>
+</header>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <h2>The workshop</h2>
+    <p class="sub">What's growing right now.</p>
+
+    <div class="grid">
+
+      <article class="card">
+        <svg class="art" viewBox="0 0 320 200" aria-hidden="true">
+          <defs><linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b26b"/><stop offset="1" stop-color="#fbe3b8"/></linearGradient></defs>
+          <rect width="320" height="200" fill="url(#sky1)"/>
+          <circle cx="250" cy="60" r="22" fill="#fff4d6"/>
+          <path d="M0 130 Q80 90 160 120 T320 110 V200 H0Z" fill="#c0612b"/>
+          <path d="M0 150 Q100 120 200 145 T320 140 V200 H0Z" fill="#8e3f1c"/>
+          <rect x="140" y="128" width="34" height="24" fill="#5a2d16"/><path d="M136 130 L157 114 L178 130Z" fill="#3a1d0e"/>
+          <rect x="152" y="138" width="8" height="8" fill="#ffd27a"/>
+          <path d="M0 200 V168 L18 150 L30 170 L44 145 L60 172 L74 158 L90 200Z M240 200 L256 160 L270 180 L288 148 L304 175 L320 162 V200Z" fill="#2a1a10"/>
+        </svg>
+        <div class="body">
+          <div class="tags"><span class="tag">Android</span><span class="tag">Live wallpaper</span><span class="tag status">In development</span></div>
+          <h3>Glance</h3>
+          <p>A living weather sky for your home screen. Rolling New England hills that react to real weather and time of day — snow piles up, puddles form, the light shifts from dawn to dusk.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <svg class="art" viewBox="0 0 320 200" aria-hidden="true">
+          <rect width="320" height="200" fill="#bfe0f5"/>
+          <path d="M-10 200 L120 40 L190 120 L230 80 L340 200Z" fill="#ffffff"/>
+          <path d="M120 40 L150 76 L135 72 L120 88 L105 72 L92 74Z" fill="#dbe9f2"/>
+          <path d="M70 200 Q110 130 130 90" stroke="#9fbcd0" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+          <path d="M190 200 Q170 150 150 110" stroke="#9fbcd0" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+          <line x1="40" y1="190" x2="140" y2="70" stroke="#556" stroke-width="2"/>
+          <rect x="70" y="150" width="10" height="8" fill="#e05a47"/><rect x="100" y="114" width="10" height="8" fill="#e05a47"/>
+          <path d="M240 200 L252 172 L264 200Z M262 200 L276 164 L290 200Z M286 200 L298 176 L310 200Z" fill="#2f5d3a"/>
+          <rect x="18" y="176" width="34" height="24" fill="#7a4b2a"/><path d="M14 178 L35 162 L56 178Z" fill="#4b2d18"/>
+        </svg>
+        <div class="body">
+          <div class="tags"><span class="tag">Game</span><span class="tag">Tycoon</span><span class="tag status">In development</span></div>
+          <h3>Mountain Mogul</h3>
+          <p>Build the ski resort of your dreams. Carve trails, string up lifts, keep the lodge cocoa flowing, and turn one snowy hill into a mountain empire.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About MossQuake</h2>
+      <p>Moss grows quietly, one patient inch at a time. Earthquakes don't. MossQuake lives somewhere in between — small, handmade projects built slowly, with the hope that a few of them make a surprising little rumble.</p>
+      <p>Everything here starts as an idea scribbled between shifts and grows from there.</p>
+    </div>
+    <ul class="values">
+      <li><b>Cozy over loud</b>Calm, charming things you're happy to come back to.</li>
+      <li><b>Handmade feel</b>A consistent, quaint art style across everything we make.</li>
+      <li><b>Always growing</b>Projects ship early and keep getting better.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>Say hello</h2>
+    <p class="sub">Questions, ideas, or bug reports — we'd love to hear from you.</p>
+    <p style="margin-top:18px;font-size:1.2rem;font-weight:600"><a href="mailto:hello@mossquake.com">hello@mossquake.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> MossQuake</span>
+    <span>Made slowly in New England 🌿</span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
